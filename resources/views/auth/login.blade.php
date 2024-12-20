@@ -8,7 +8,7 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #007bff;
+            background-color: #000000;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -43,7 +43,7 @@
         .login-container button {
             width: 100%;
             padding: 12px;
-            background-color: #007bff;
+            background-color: #000000;
             color: #ffffff;
             border: none;
             border-radius: 6px;
@@ -82,7 +82,7 @@
                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
             </svg>
         </div>
-        <h2>PPT Lynxc</h2>
+        <h2>Nguengg</h2>
         <form action="{{ route('login.process') }}" method="POST">
             @csrf
             <input type="email" name="email" placeholder="Enter Your Email" required>

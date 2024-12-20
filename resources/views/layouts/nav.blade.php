@@ -2,7 +2,7 @@
     $currentRouteName = Route::currentRouteName();
 @endphp
 
-<nav class="navbar navbar-expand-md navbar-dark bg-primary">
+<nav class="navbar navbar-expand-md navbar-dark bg-black">
     <div class="container">
         <a href="{{ route('home') }}" class="navbar-brand mb-0 h1"><i class="bi-hexagon-fill me-2"></i> Nguengg </a>
 
@@ -18,7 +18,7 @@
                     <a href="{{ route('home') }}" class="nav-link @if($currentRouteName == 'home') active @endif">Home</a>
                 </li>
                 <li class="nav-item col-2 col-md-auto">
-                    <a href="{{ route('employees.index') }}" class="nav-link @if($currentRouteName == 'employees.index') active @endif">Peminjam</a>
+                    <a href="{{ route('customers.index') }}" class="nav-link @if($currentRouteName == 'customers.index') active @endif">Peminjam</a>
                 </li>
             </ul>
 

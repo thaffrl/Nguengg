@@ -8,7 +8,7 @@
             </div>
             <div class="col-lg-3 col-xl-2">
                 <div class="d-grid gap-2">
-                    <a href="{{ route('employees.create') }}" class="btn btn-primary">Create Employee</a>
+                    <a href="{{ route('customers.create') }}" class="btn btn-primary">Create Customer</a>
                 </div>
             </div>
         </div>
@@ -21,19 +21,19 @@
                         <th>Last Name</th>
                         <th>Email</th>
                         <th>Age</th>
-                        <th>Position</th>
+                        <th>car</th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($employees as $employee)
+                    @foreach ($customers as $customer)
                         <tr>
-                            <td>{{ $employee->firstname }}</td>
-                            <td>{{ $employee->lastname }}</td>
-                            <td>{{ $employee->email }}</td>
-                            <td>{{ $employee->age }}</td>
-                            <td>{{ $employee->position->name }}</td>
-                            <td>@include('employee.actions')</td>
+                            <td>{{ $customer->firstname }}</td>
+                            <td>{{ $customer->lastname }}</td>
+                            <td>{{ $customer->email }}</td>
+                            <td>{{ $customer->age }}</td>
+                            <td>{{ $customer->car->name }}</td>
+                            <td>@include('customer.actions')</td>
                         </tr>
                     @endforeach
                 </tbody>

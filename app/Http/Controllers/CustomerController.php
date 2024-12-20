@@ -2,27 +2,27 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Employee;
+use App\Models\Customer;
 use App\Models\Position;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 
 
-class EmployeeController extends Controller
+class CustomerController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index() 
 { 
-    $pageTitle = 'Employee List'; 
+    $pageTitle = 'Customer List'; 
  
-    $employees = Employee::all();
+    $customers = Customer::all();
 
-    return view('employee.index', [
+    return view('customer.index', [
         'pageTitle' => $pageTitle,
-        'employees' => $employees
+        'customers' => $customers
     ]);
 
 }
@@ -32,12 +32,12 @@ class EmployeeController extends Controller
      */
     public function create()
 {
-    $pageTitle = 'Create Employee';
+    $pageTitle = 'Create Customer';
 
     // ELOQUENT
-    $positions = Position::all();
+    $cars = Car::all();
 
-    return view('employee.create', compact('pageTitle', 'positions'));
+    return view('customer.create', compact('pageTitle', 'cars'));
 }
 
 public function store(Request $request)
@@ -60,36 +60,36 @@ public function store(Request $request)
     }
 
     // ELOQUENT
-    $employee = New Employee;
-    $employee->firstname = $request->firstName;
-    $employee->lastname = $request->lastName;
-    $employee->email = $request->email;
-    $employee->age = $request->age;
-    $employee->position_id = $request->position;
-    $employee->save();
+    $customer = New customer;
+    $customer->firstname = $request->firstName;
+    $customer->lastname = $request->lastName;
+    $customer->email = $request->email;
+    $customer->age = $request->age;
+    $customer->position_id = $request->position;
+    $customer->save();
 
-    return redirect()->route('employees.index');
+    return redirect()->route('customers.index');
 }
 
 public function show(string $id)
 {
-    $pageTitle = 'Employee Detail';
+    $pageTitle = 'Customer Detail';
 
     // ELOQUENT
-    $employee = Employee::find($id);
+    $customer = Customer::find($id);
 
-    return view('employee.show', compact('pageTitle', 'employee'));
+    return view('customer.show', compact('pageTitle', 'customer'));
 }
 
 public function edit(string $id)
 {
-    $pageTitle = 'Edit Employee';
+    $pageTitle = 'Edit customer';
 
     // ELOQUENT
-    $positions = Position::all();
-    $employee = Employee::find($id);
+    $car = Car::all();
+    $customer = Customer::find($id);
 
-    return view('employee.edit', compact('pageTitle', 'positions', 'employee'));
+    return view('customer.edit', compact('pageTitle', 'car', 'customer'));
 }
 
 public function update(Request $request, string $id)
@@ -112,21 +112,21 @@ public function update(Request $request, string $id)
     }
 
     // ELOQUENT
-    $employee = Employee::find($id);
-    $employee->firstname = $request->firstName;
-    $employee->lastname = $request->lastName;
-    $employee->email = $request->email;
-    $employee->age = $request->age;
-    $employee->position_id = $request->position;
-    $employee->save();
+    $customer = Customer::find($id);
+    $customer->firstname = $request->firstName;
+    $customer->lastname = $request->lastName;
+    $customer->email = $request->email;
+    $customer->age = $request->age;
+    $customer->Car_id = $request->car;
+    $customer->save();
 
-    return redirect()->route('employees.index');
+    return redirect()->route('customers.index');
 }
     public function destroy(string $id)
     {
         // ELOQUENT
-        Employee::find($id)->delete();
+        Customer::find($id)->delete();
 
-        return redirect()->route('employees.index');
+        return redirect()->route('customers.index');
     }
 }

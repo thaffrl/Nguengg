@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -13,10 +13,11 @@ Route::get('/', function () {
 });
 Route::get('home', [HomeController::class, 'index'])->name('home');
 Route::get('profile', ProfileController::class)->name('profile');
-Route::get('/employees/create', [EmployeeController::class, 'create'])->name('employees.create');
-Route::resource('employees', EmployeeController::class);Route::get('employees/{employee}/edit', [EmployeeController::class, 'edit'])->name('employees.edit');
-Route::get('employees/{employee}/edit', [EmployeeController::class, 'edit'])->name('employees.edit');
-Route::put('employees/{employee}', [EmployeeController::class, 'update'])->name('employees.update');
+Route::get('/customers/create', [CustomerController::class, 'create'])->name('customers.create');
+Route::get('/customers', [CustomerController::class, 'index'])->name('customers.index');
+Route::resource('customers', CustomerController::class);Route::get('customers/{customer}/edit', [CustomerController::class, 'edit'])->name('customers.edit');
+Route::get('customers/{customer}/edit', [CustomerController::class, 'edit'])->name('customers.edit');
+Route::put('customers/{customer}', [CustomerController::class, 'update'])->name('customers.update');
 Route::get('/', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login.post');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
@@ -25,12 +26,12 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::middleware(['auth'])->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
-    Route::resource('employees', EmployeeController::class);
+    Route::resource('customers', CustomerController::class);
 });
 Route::middleware(['auth'])->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
-    Route::resource('employees', EmployeeController::class);
+    Route::resource('customers', CustomerController::class);
 });
 
 Route::get('login', [AuthController::class, 'login'])->name('login');
@@ -42,7 +43,7 @@ Route::get('/', [AuthController::class, 'showLogin'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login.process');
 Route::middleware(['auth'])->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
-    Route::get('/employees', [EmployeeController::class, 'index'])->name('employees.index');
+    Route::get('/customers', [CustomerController::class, 'index'])->name('customers.index');
 });
 
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');

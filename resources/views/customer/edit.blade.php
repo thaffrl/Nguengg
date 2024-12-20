@@ -5,17 +5,17 @@
         <div class="col-lg-6">
             <div class="card">
                 <div class="card-header text-center">
-                    <h4 class="card-title">Edit Employee</h4>
+                    <h4 class="card-title">Edit Customer</h4>
                 </div>
                 <div class="card-body">
-                    <form action="{{ route('employees.update', ['employee' => $employee->id]) }}" method="POST">
+                    <form action="{{ route('customerss.update', ['customer' => $customer->id]) }}" method="POST">
                         @csrf
                         @method('put')
                         <div class="row justify-content-center">
                             <div class="p-5 bg-light rounded-3 col-xl-6">
                                 <div class="mb-3 text-center">
                                     <i class="bi-person-circle fs-1"></i>
-                                    <h4>Edit Employee</h4>
+                                    <h4>Edit Customer</h4>
                                 </div>
                                 <hr>
                                 <div class="row">
@@ -48,20 +48,20 @@
                                         @enderror
                                     </div>
                                     <div class="col-md-12 mb-3">
-                                        <label for="position" class="form-label">Position</label>
-                                        <select name="position" id="position" class="form-select">
+                                        <label for="car" class="form-label">car</label>
+                                        <select name="car" id="car" class="form-select">
                                             @php
                                                 $selected = "";
                                                 if ($errors->any())
-                                                    $selected = old('position');
+                                                    $selected = old('car');
                                                 else
-                                                    $selected = $employee->position_id;
+                                                    $selected = $customer->car_id;
                                             @endphp
-                                            @foreach ($positions as $position)
-                                                <option value="{{ $position->id }}" {{ $selected == $position->id ? 'selected' : '' }}>{{ $position->code.' - '.$position->name }}</option>
+                                            @foreach ($cars as $car)
+                                                <option value="{{ $car->id }}" {{ $selected == $car->id ? 'selected' : '' }}>{{ $car->code.' - '.$car->name }}</option>
                                             @endforeach
                                         </select>
-                                        @error('position')
+                                        @error('car')
                                             <div class="text-danger"><small>{{ $message }}</small></div>
                                         @enderror
                                     </div>
@@ -69,7 +69,7 @@
                                 <hr>
                                 <div class="row">
                                     <div class="col-md-6 d-grid">
-                                        <a href="{{ route('employees.index') }}" class="btn btn-outline-dark btn-lg mt-3"><i class="bi-arrow-left-circle me-2"></i> Cancel</a>
+                                        <a href="{{ route('customers.index') }}" class="btn btn-outline-dark btn-lg mt-3"><i class="bi-arrow-left-circle me-2"></i> Cancel</a>
                                     </div>
                                     <div class="col-md-6 d-grid">
                                         <button type="submit" class="btn btn-dark btn-lg mt-3"><i class="bi-check-circle me-2"></i> Edit</button>

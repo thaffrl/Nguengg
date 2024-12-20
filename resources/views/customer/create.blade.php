@@ -2,13 +2,13 @@
 
 @section('content')
     <div class="container-sm my-5">
-        <form action="{{ route('employees.store') }}" method="POST">
+        <form action="{{ route('customers.store') }}" method="POST">
             @csrf
             <div class="row justify-content-center">
                 <div class="p-5 bg-light rounded-3 border col-xl-6">
                     <div class="mb-3 text-center">
                         <i class="bi-person-circle fs-1"></i>
-                        <h4>Create Employee</h4>
+                        <h4>Create Customer</h4>
                     </div>
                     <hr>
                     <div class="row">
@@ -41,13 +41,13 @@
                             @enderror
                         </div>
                         <div class="col-md-12 mb-3">
-                            <label for="position" class="form-label">Position</label>
-                            <select name="position" id="position" class="form-select">
-                                @foreach ($positions as $position)
-                                    <option value="{{ $position->id }}" {{ old('position') == $position->id ? 'selected' : '' }}>{{ $position->code.' - '.$position->name }}</option>
+                            <label for="car" class="form-label">Car</label>
+                            <select name="car" id="car" class="form-select">
+                                @foreach ($cars as $car)
+                                    <option value="{{ $car->id }}" {{ old('car') == $car->id ? 'selected' : '' }}>{{ $car->code.' - '.$car->name }}</option>
                                 @endforeach
                             </select>
-                            @error('position')
+                            @error('car')
                                 <div class="text-danger"><small>{{ $message }}</small></div>
                             @enderror
                         </div>
@@ -55,7 +55,7 @@
                     <hr>
                     <div class="row">
                         <div class="col-md-6 d-grid">
-                            <a href="{{ route('employees.index') }}" class="btn btn-outline-dark btn-lg mt-3"><i class="bi-arrow-left-circle me-2"></i> Cancel</a>
+                            <a href="{{ route('customers.index') }}" class="btn btn-outline-dark btn-lg mt-3"><i class="bi-arrow-left-circle me-2"></i> Cancel</a>
                         </div>
                         <div class="col-md-6 d-grid">
                             <button type="submit" class="btn btn-dark btn-lg mt-3"><i class="bi-check-circle me-2"></i> Save</button>
