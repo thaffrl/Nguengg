@@ -12,21 +12,21 @@ class CarSeeder extends Seeder
      */
     public function run(): void 
     { 
-        DB::table('car')->insert([ 
+        DB::table('cars')->insert([ 
             [ 
-                'code' => 'XP', 
-                'name' => 'Xpander', 
-                'price' => 'Rp350000' 
+                'code' => 'FE', 
+                'name' => 'Front End Developer', 
+                'description' => 'Front End Developer' 
             ], 
             [ 
-                'code' => 'FT', 
-                'name' => 'Fortuner', 
-                'price' => 'Rp400000' 
+                'code' => 'BE', 
+                'name' => 'Back End Developer', 
+                'description' => 'Back End Developer' 
             ], 
             [ 
-                'code' => 'CR', 
-                'name' => 'Chery', 
-                'price' => 'Rp500000' 
+                'code' => 'SA', 
+                'name' => 'System Analist', 
+                'description' => 'System Analist' 
             ], 
         ]); 
     } 
