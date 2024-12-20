@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Customer;
+<<<<<<< HEAD
+=======
+use App\Models\Position;
+>>>>>>> c6176308cc3a97be611184f504278997112a970a
 use App\Models\Car;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -14,10 +18,10 @@ class CustomerController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index() 
-{ 
-    $pageTitle = 'Customer List'; 
- 
+    public function index()
+{
+    $pageTitle = 'Customer List';
+
     $customers = Customer::all();
 
     return view('customer.index', [
