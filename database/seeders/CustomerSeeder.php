@@ -14,25 +14,11 @@ class CustomerSeeder extends Seeder
     { 
         DB::table('customers')->insert([ 
             [ 
-                'firstname' => 'Purnama', 
-                'lastname' => 'Anaking', 
-                'email'=> 'purnama.anaking@gmail.com', 
+                'firstname' => 'Althaf', 
+                'lastname' => 'Farrel', 
+                'email'=> 'althaffarrelbusiness@gmail.com', 
                 'age' => 20, 
                 'car_id' => 1 
-            ], 
-            [ 
-                'firstname' => 'Adzanil', 
-                'lastname' => 'Rachmadhi', 
-                'email'=> 'adzanil.rachmadhi@gmail.com', 
-                'age' => 25, 
-                'car_id' => 2 
-            ], 
-            [ 
-                'firstname' => 'Berlian', 
-                'lastname' => 'Rahmy', 
-                'email'=> 'berlian.rahmy@gmail.com', 
-                'age' => 23, 
-                'car_id' => 3 
             ], 
         ]); 
     } 

@@ -65,7 +65,7 @@ public function store(Request $request)
     $customer->lastname = $request->lastName;
     $customer->email = $request->email;
     $customer->age = $request->age;
-    $customer->position_id = $request->position;
+    $customer->car_id = $request->car;
     $customer->save();
 
     return redirect()->route('customers.index');
