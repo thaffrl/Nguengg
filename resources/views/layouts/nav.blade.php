@@ -18,7 +18,7 @@
                     <a href="{{ route('home') }}" class="nav-link @if($currentRouteName == 'home') active @endif">Home</a>
                 </li>
                 <li class="nav-item col-2 col-md-auto">
-                    <a href="{{ route('customers.index') }}" class="nav-link @if($currentRouteName == 'customers.index') active @endif">Peminjam</a>
+                    <a href="{{ route('customers.index') }}" class="nav-link @if($currentRouteName == 'customers.index') active @endif">Customer</a>
                 </li>
             </ul>
 

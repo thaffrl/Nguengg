@@ -117,7 +117,7 @@ public function update(Request $request, string $id)
     $customer->lastname = $request->lastName;
     $customer->email = $request->email;
     $customer->age = $request->age;
-    $customer->Car_id = $request->car;
+    $customer->car_id = $request->car;
     $customer->save();
 
     return redirect()->route('customers.index');
