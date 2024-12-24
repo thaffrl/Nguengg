@@ -8,7 +8,7 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #000000;
+            background-color: #808080;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -32,18 +32,21 @@
         }
 
         .login-container input {
-            width: 100%;
+            width: calc(100% - 24px); /* Adjust to match padding */
             padding: 12px;
             margin-bottom: 15px;
             border: 1px solid #ddd;
             border-radius: 6px;
             font-size: 16px;
+            display: block; /* Ensure block alignment */
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .login-container button {
-            width: 100%;
+            width: calc(100% - 24px); /* Adjust to match padding */
             padding: 12px;
-            background-color: #000000;
+            background-color: #007bff;
             color: #ffffff;
             border: none;
             border-radius: 6px;
@@ -51,6 +54,10 @@
             font-weight: bold;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            display: block; /* Ensure block alignment */
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 10px; /* Add margin between buttons */
         }
 
         .login-container button:hover {
@@ -85,10 +92,13 @@
         <h2>Nguengg</h2>
         <form action="{{ route('login.process') }}" method="POST">
             @csrf
-            <input type="email" name="email" placeholder="Enter Your Email" required>
-            <input type="password" name="password" placeholder="Enter Your Password" required>
-            <button type="submit">Log In</button>
+            <input type="email" name="email" placeholder="Masukkan Email Anda" required>
+            <input type="password" name="password" placeholder="Masukkan Passworanda" required>
+            <button type="submit">Login Admin</button>
         </form>
+        <a href="login.html">
+            <button>Form Peminjaman</button>
+        </a>
     </div>
 </body>
 </html>
