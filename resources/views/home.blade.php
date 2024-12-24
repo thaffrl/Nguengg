@@ -3,6 +3,6 @@
 @section('content')
     <div class="container">
         <h1>{{ $pageTitle }}</h1>
-        <p>Welcome to the home page!</p>
+        <p>Siap Untuk menemani perjalanan anda.</p>
     </div>
 @endsection
