@@ -14,19 +14,19 @@ class CarSeeder extends Seeder
     { 
         DB::table('cars')->insert([ 
             [ 
-                'code' => 'FE', 
-                'name' => 'Front End Developer', 
-                'description' => 'Front End Developer' 
+                'code' => 'XP', 
+                'name' => 'Xpander', 
+                'description' => 'Mitsubishi-Xpander' 
             ], 
             [ 
-                'code' => 'BE', 
-                'name' => 'Back End Developer', 
-                'description' => 'Back End Developer' 
+                'code' => 'CV', 
+                'name' => 'Civic', 
+                'description' => 'Honda-Civic' 
             ], 
             [ 
-                'code' => 'SA', 
-                'name' => 'System Analist', 
-                'description' => 'System Analist' 
+                'code' => 'NM', 
+                'name' => 'Nissan Magnite', 
+                'description' => 'Nissan-Nissan Magnite' 
             ], 
         ]); 
     } 
