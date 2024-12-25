@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
-    public function showLogin()
+    public function showLoginForm()
     {
         return view('auth.login'); // Pastikan Anda memiliki file resources/views/auth/login.blade.php
     }

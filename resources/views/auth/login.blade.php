@@ -96,9 +96,13 @@
             <input type="password" name="password" placeholder="Masukkan Passworanda" required>
             <button type="submit">Login Admin</button>
         </form>
-        <a href="login.html">
-            <button>Form Peminjaman</button>
-        </a>
+        <form action="{{ route('homecustomer') }}" method="GET">
+            @csrf
+            <button type="submit">Peminjaman</button>
+        </form>
+        
+
+        
     </div>
 </body>
 </html>
