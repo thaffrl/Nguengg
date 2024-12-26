@@ -28,33 +28,37 @@ class HomeCustomerController extends Controller
     }
     
     public function store(Request $request)
-{
-    $messages = [
-        'required' => ':Attribute harus diisi.',
-        'email' => 'Isi :attribute dengan format yang benar',
-        'numeric' => 'Isi :attribute dengan angka'
-    ];
-
-    $validator = Validator::make($request->all(), [
-        'firstName' => 'required',
-        'lastName' => 'required',
-        'email' => 'required|email',
-        'age' => 'required|numeric',
-    ], $messages);
-
-    if ($validator->fails()) {
-        return redirect()->back()->withErrors($validator)->withInput();
+    {
+        $messages = [
+            'required' => ':Attribute harus diisi.',
+            'email' => 'Isi :attribute dengan format yang benar',
+            'numeric' => 'Isi :attribute dengan angka'
+        ];
+    
+        $validator = Validator::make($request->all(), [
+            'firstName' => 'required',
+            'lastName' => 'required',
+            'email' => 'required|email',
+            'age' => 'required|numeric',
+            'rentalDate' => 'required|date',
+            'returnDate' => 'required|date|after_or_equal:rentalDate', // Pastikan returnDate setelah rentalDate
+        ], $messages);
+    
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+    
+        // ELOQUENT
+        $customer = new Customer;
+        $customer->firstname = $request->firstName;
+        $customer->lastname = $request->lastName;
+        $customer->email = $request->email;
+        $customer->age = $request->age;
+        $customer->car_id = $request->car;
+        $customer->rentalDate = $request->rentalDate; // Simpan tanggal peminjaman
+        $customer->returnDate = $request->returnDate; // Simpan tanggal kembalian
+        $customer->save();
+    
+        return redirect()->route('customers.index');
     }
-
-    // ELOQUENT
-    $customer = new Customer;
-    $customer->firstname = $request->firstName;
-    $customer->lastname = $request->lastName;
-    $customer->email = $request->email;
-    $customer->age = $request->age;
-    $customer->car_id = $request->car;
-    $customer->save();
-
-    return redirect()->route('customers.index');
-}
 }

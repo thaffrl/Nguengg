@@ -1,4 +1,3 @@
-<!-- resources/views/homecustomer.blade.php -->
 @extends('layouts.appCustomer') <!-- Menggunakan layout yang sama -->
 
 @section('content')
@@ -49,6 +48,24 @@
                                 @endforeach
                             </select>
                             @error('car')
+                                <div class="text-danger"><small>{{ $message }}</small></div>
+                            @enderror
+                        </div>
+
+                        <!-- Tanggal Peminjaman -->
+                        <div class="col-md-6 mb-3">
+                            <label for="rentalDate" class="form-label">Tanggal Peminjaman</label>
+                            <input class="form-control @error('rentalDate') is-invalid @enderror" type="date" name="rentalDate" id="rentalDate" value="{{ old('rentalDate') }}">
+                            @error('rentalDate')
+                                <div class="text-danger"><small>{{ $message }}</small></div>
+                            @enderror
+                        </div>
+
+                        <!-- Tanggal Kembalian -->
+                        <div class="col-md-6 mb-3">
+                            <label for="returnDate" class="form-label">Tanggal Kembalian</label>
+                            <input class="form-control @error('returnDate') is-invalid @enderror" type="date" name="returnDate" id="returnDate" value="{{ old('returnDate') }}">
+                            @error('returnDate')
                                 <div class="text-danger"><small>{{ $message }}</small></div>
                             @enderror
                         </div>

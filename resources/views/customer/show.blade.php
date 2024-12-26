@@ -15,7 +15,7 @@
                         <h5>{{ $customer->firstname }}</h5>
                     </div>
                     <div class="col-md-12 mb-3">
-                        <label for="lastName" class="form-label">Belakang</label>
+                        <label for="lastName" class="form-label">Nama Belakang</label>
                         <h5>{{ $customer->lastname }}</h5>
                     </div>
                     <div class="col-md-12 mb-3">
@@ -27,8 +27,17 @@
                         <h5>{{ $customer->age }}</h5>
                     </div>
                     <div class="col-md-12 mb-3">
-                        <label for="age" class="form-label">Mobil</label>
+                        <label for="car" class="form-label">Mobil</label>
                         <h5>{{ $customer->car->name }}</h5>
+                    </div>
+                    <!-- Menambahkan Tanggal Peminjaman dan Tanggal Kembalian -->
+                    <div class="col-md-12 mb-3">
+                        <label for="rentalDate" class="form-label">Tanggal Peminjaman</label>
+                        <h5>{{ $customer->rentalDate }}</h5>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <label for="returnDate" class="form-label">Tanggal Kembalian</label>
+                        <h5>{{ $customer->returnDate }}</h5>
                     </div>
                 </div>
                 <hr>
