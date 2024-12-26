@@ -56,3 +56,4 @@ Route::get('/homecustomer', function () {
 Route::get('/homecustomer', [HomeCustomerController::class, 'index'])->name('homecustomer');
 Route::post('/homecustomer', [HomeCustomerController::class, 'store']);
 Route::get('/customers/create', [HomeCustomerController::class, 'create'])->name('customers.create');
+Route::post('/customers', [HomeCustomerController::class, 'store'])->name('customers.store');

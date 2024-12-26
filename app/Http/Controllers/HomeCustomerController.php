@@ -11,10 +11,10 @@ class HomeCustomerController extends Controller
 {
     public function index()
     {
-        $cars = Car::all();
         $pageTitle = 'Silahkan Isi Form Anda';
-        
-        return view('homecustomer', compact('pageTitle', 'cars'));
+        $takenCarIds = Customer::pluck('car_id')->toArray();
+        $availableCars = Car::whereNotIn('id', $takenCarIds)->get(); // Ambil mobil yang belum dipilih
+        return view('homecustomer', compact('pageTitle', 'availableCars'));
         
     }
     public function create()
@@ -47,7 +47,7 @@ class HomeCustomerController extends Controller
     }
 
     // ELOQUENT
-    $customer = New customer;
+    $customer = new Customer;
     $customer->firstname = $request->firstName;
     $customer->lastname = $request->lastName;
     $customer->email = $request->email;

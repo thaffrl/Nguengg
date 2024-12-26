@@ -1,5 +1,5 @@
 <!-- resources/views/homecustomer.blade.php -->
-@extends('layouts.app') <!-- Menggunakan layout yang sama -->
+@extends('layouts.appCustomer') <!-- Menggunakan layout yang sama -->
 
 @section('content')
     <div class="container-sm my-5">
@@ -44,7 +44,7 @@
                         <div class="col-md-12 mb-3">
                             <label for="car" class="form-label">Mobil</label>
                             <select name="car" id="car" class="form-select">
-                                @foreach ($cars as $car)
+                                @foreach ($availableCars as $car)
                                     <option value="{{ $car->id }}" {{ old('car') == $car->id ? 'selected' : '' }}>{{ $car->code.' - '.$car->name }}</option>
                                 @endforeach
                             </select>
