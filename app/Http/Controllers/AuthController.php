@@ -4,29 +4,29 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class AuthController extends Controller
 {
     public function showLoginForm()
     {
-        return view('auth.login'); // Pastikan Anda memiliki file resources/views/auth/login.blade.php
+        return view('auth.login'); // File resources/views/auth/login.blade.php
     }
+
     public function login(Request $request)
-{
-    $credentials = $request->only('email', 'password');
+    {
+        $credentials = $request->only('email', 'password');
 
-    if (Auth::attempt($credentials)) {
-        $request->session()->regenerate();
-        return redirect()->intended('home');
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+            return redirect()->intended('home');
+        }
+
+        Log::info('Login failed for user: ' . $request->email);
+        return back()->withErrors([
+            'email' => __('auth.failed'),
+        ]);
     }
-
-    \Log::info('Login failed for user: ' . $request->email);
-    return back()->withErrors([
-        'email' => 'The provided credentials do not match our records.',
-    ]);
-}
-
-
 
     public function logout(Request $request)
     {
@@ -34,6 +34,6 @@ class AuthController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect('/'); // Redirect ke halaman login
+        return redirect('/');
     }
 }
