@@ -4,7 +4,6 @@
 
 <nav class="navbar navbar-expand-md navbar-dark bg-black">
     <div class="container">
-        <!-- Ganti dengan logo gambar -->
         <a href="{{ route('homecustomer') }}" class="navbar-brand mb-0 h1" style="color: #FFD700;">
             Nguengg
         </a>

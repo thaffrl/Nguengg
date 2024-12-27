@@ -66,5 +66,15 @@
                         @enderror
                     </div>
                     <div class="col-md-6 mb-3">
-                        <label for="ktp" class="form-label">No. KTP</label>
-                        <input class="form-control @error('ktp') is-invalid @enderror" type="text" name="
+                        <label for="ktp" class="form-label">Ktp</label>
+                        <input class="form-control @error('ktp') is-invalid @enderror" type="number" name="ktp" id="ktp" value="{{ old('ktp') }}" placeholder="Masukkan No. KTP">
+                        @error('ktp')
+                            <div class="text-danger"><small>{{ $message }}</small></div>
+                        @enderror
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+@endsection
