@@ -72,9 +72,16 @@
                             <div class="text-danger"><small>{{ $message }}</small></div>
                         @enderror
                     </div>
+                    <div class="row">
+                        <div class="col-md-6 d-grid">
+                            <a href="{{ route('customers.index') }}" class="btn btn-danger btn-lg mt-3"><i class="bi-arrow-left-circle me-2"></i> Batal</a>
+                        </div>
+                        <div class="col-md-6 d-grid">
+                            <button type="submit" class="btn btn-success btn-lg mt-3"><i class="bi-check-circle me-2"></i> Simpan</button>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </form>
-</div>
+        </form>        
+    </div>
 @endsection
