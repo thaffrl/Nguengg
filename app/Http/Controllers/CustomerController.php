@@ -53,6 +53,7 @@ public function store(Request $request)
         'lastName' => 'required',
         'email' => 'required|email',
         'age' => 'required|numeric',
+        'ktp' => 'required|numeric',
         'rentalDate' => 'required|date',
         'returnDate' => 'required|date|after_or_equal:rentalDate', // Pastikan returnDate setelah rentalDate
     ], $messages);
@@ -68,6 +69,7 @@ public function store(Request $request)
     $customer->email = $request->email;
     $customer->age = $request->age;
     $customer->car_id = $request->car;
+    $customer->ktp = $request->ktp;
     $customer->rentalDate = $request->rentalDate; // Simpan tanggal peminjaman
     $customer->returnDate = $request->returnDate; // Simpan tanggal kembalian
     $customer->save();
@@ -113,6 +115,7 @@ public function update(Request $request, string $id)
         'lastName' => 'required',
         'email' => 'required|email',
         'age' => 'required|numeric',
+        'ktp' => 'required|numeric',
         'rentalDate' => 'required|date',
         'returnDate' => 'required|date|after_or_equal:rentalDate', // Pastikan returnDate setelah rentalDate
     ], $messages);
@@ -128,6 +131,7 @@ public function update(Request $request, string $id)
     $customer->email = $request->email;
     $customer->age = $request->age;
     $customer->car_id = $request->car;
+    $customer->ktp = $request->ktp;
     $customer->rentalDate = $request->rentalDate; // Update tanggal peminjaman
     $customer->returnDate = $request->returnDate; // Update tanggal kembalian
     $customer->save();

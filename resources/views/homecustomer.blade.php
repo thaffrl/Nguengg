@@ -34,9 +34,9 @@
                         @enderror
                     </div>
                     <div class="col-md-6 mb-3">
-                        <label for="umur" class="form-label">Umur</label>
-                        <input class="form-control @error('umur') is-invalid @enderror" type="number" name="umur" id="umur" value="{{ old('umur') }}" placeholder="Masukkan Umur">
-                        @error('umur')
+                        <label for="age" class="form-label">Umur</label>
+                        <input class="form-control @error('age') is-invalid @enderror" type="number" name="age" id="age" value="{{ old('age') }}" placeholder="Masukkan Umur">
+                        @error('age')
                             <div class="text-danger"><small>{{ $message }}</small></div>
                         @enderror
                     </div>
@@ -51,6 +51,13 @@
                             <div class="text-danger"><small>{{ $message }}</small></div>
                         @enderror
                     </div>
+                    <div class="col-md-7 mb-3">
+                        <label for="ktp" class="form-label">KTP</label>
+                        <input class="form-control @error('ktp') is-invalid @enderror" type="number" name="ktp" id="ktp" value="{{ old('ktp') }}" placeholder="Masukkan No. KTP">
+                        @error('ktp')
+                            <div class="text-danger"><small>{{ $message }}</small></div>
+                        @enderror
+                    </div>
                     <div class="col-md-6 mb-3">
                         <label for="tanggal_pinjam" class="form-label">Tanggal Pinjam</label>
                         <input class="form-control @error('tanggal_pinjam') is-invalid @enderror" type="date" name="tanggal_pinjam" id="tanggal_pinjam" value="{{ old('tanggal_pinjam') }}">
@@ -62,13 +69,6 @@
                         <label for="tanggal_kembali" class="form-label">Tanggal Kembali</label>
                         <input class="form-control @error('tanggal_kembali') is-invalid @enderror" type="date" name="tanggal_kembali" id="tanggal_kembali" value="{{ old('tanggal_kembali') }}">
                         @error('tanggal_kembali')
-                            <div class="text-danger"><small>{{ $message }}</small></div>
-                        @enderror
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="ktp" class="form-label">Ktp</label>
-                        <input class="form-control @error('ktp') is-invalid @enderror" type="number" name="ktp" id="ktp" value="{{ old('ktp') }}" placeholder="Masukkan No. KTP">
-                        @error('ktp')
                             <div class="text-danger"><small>{{ $message }}</small></div>
                         @enderror
                     </div>

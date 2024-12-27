@@ -30,6 +30,10 @@
                         <label for="car" class="form-label">Mobil</label>
                         <h5>{{ $customer->car->name }}</h5>
                     </div>
+                    <div class="col-md-7 mb-3">
+                        <label for="ktp" class="form-label">KTP</label>
+                        <h5>{{ $customer->ktp }}</h5>
+                    </div>
                     <!-- Menambahkan Tanggal Peminjaman dan Tanggal Kembalian -->
                     <div class="col-md-12 mb-3">
                         <label for="rentalDate" class="form-label">Tanggal Peminjaman</label>

@@ -40,6 +40,7 @@ class HomeCustomerController extends Controller
             'lastName' => 'required',
             'email' => 'required|email',
             'age' => 'required|numeric',
+            'ktp' => 'required|numeric',
             'rentalDate' => 'required|date',
             'returnDate' => 'required|date|after_or_equal:rentalDate', // Pastikan returnDate setelah rentalDate
         ], $messages);
@@ -55,6 +56,7 @@ class HomeCustomerController extends Controller
         $customer->email = $request->email;
         $customer->age = $request->age;
         $customer->car_id = $request->car;
+        $customer->ktp = $request->ktp;
         $customer->rentalDate = $request->rentalDate; // Simpan tanggal peminjaman
         $customer->returnDate = $request->returnDate; // Simpan tanggal kembalian
         $customer->save();

@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('firstname'); 
             $table->string('lastname')->nullable(); 
             $table->string('email')->unique(); 
-            $table->integer('age'); 
+            $table->integer('age');
             $table->foreignId('car_id')->constrained(); 
             $table->timestamps(); 
         }); 
